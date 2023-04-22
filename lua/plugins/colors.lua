@@ -1,0 +1,56 @@
+-- luacheck: globals vim
+
+return {
+  {
+    'rebelot/kanagawa.nvim',
+    config = function()
+      require'kanagawa'.setup({
+        theme="wave",
+        colors={
+          theme = {
+            wave = {
+              ui = {
+                bg="#000000",
+                fg="palegreen",
+                kw='#C5AFE8',
+                bg_gutter='none',
+              }
+            },
+          },
+        },
+        overrides = function(colors)
+          return {
+            Comment = { fg = "#FF7F24" },
+            CocFloating = { link = "PMenu" },
+            CocMenuSel = { link = "PMenuSel" },
+            WinSeparator = { fg = "#303030" },
+            CursorLine = { bg = "#161626" },
+            ColorColumn = { bg = "#161626" },
+            CursorLineNr = { fg = colors.palette.springBlue },
+            VirtColumn = { fg = "#333333" },
+            IndentBlanklineIndent1 = { fg = "#49443C" },
+            IndentBlanklineIndent2 = { fg = "#2B3328" },
+            IndentBlanklineIndent3 = { fg = "#43242B" },
+            IndentBlanklineIndent4 = { fg = "#252535" },
+            ["@keyword.return"] = { italic = false },
+            ["@variable.builtin"] = { italic = false },
+            ["@comment.code"] = { fg = colors.palette.fujiGray },
+          }
+        end,
+      })
+    end
+  },
+
+  { 'mcchrish/zenbones.nvim', dependencies = { 'rktjmp/lush.nvim' } },
+  { 'uloco/bluloco.nvim', dependencies = { 'rktjmp/lush.nvim' } },
+  {
+    'folke/tokyonight.nvim',
+    config = function()
+      require("tokyonight").setup({
+        on_colors = function(colors)
+          colors.bg = "#000000"
+        end
+      })
+    end
+  },
+}
