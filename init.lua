@@ -32,7 +32,12 @@ return M
   fp.close()
 end
 
-require('lazy').setup("plugins")
+require('lazy').setup({
+  spec="plugins",
+  change_detection = {
+    notify = false,
+  },
+})
 
 -- Options
 vim.opt.ignorecase = true
