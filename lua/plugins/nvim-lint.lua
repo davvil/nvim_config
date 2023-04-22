@@ -4,19 +4,14 @@ return {
     config = function()
       local lint = require('lint')
 
-      lint.linters.gpylint = {
-        cmd = 'gpylint3',
-        stdin = true,
-        parser = lint.linters.pylint.parser,
-        args = { '-f', 'json', '--from-stdin', function() return vim.fn.expand('%') end },
-        ignore_exitcode = true,
-      }
-
       lint.linters_by_ft = {
-        python = {'gpylint'},
         sh = {'shellcheck'},
         lua = {'luacheck'},
       }
+      local ok, local_defs = pcall(require, 'local.config')
+      if ok and local_defs.lint_config ~= nil then
+        local_defs.lint_config(lint)
+      end
 
       vim.cmd([[
       function! SetLint()

@@ -2,12 +2,8 @@
 
 local vcinfo = function() return "" end
 local ok, local_defs = pcall(require, 'local.config')
-if ok then
-  for k, v in pairs(local_defs) do
-    if k == "lualine_vcinfo" then
-      vcinfo = v
-    end
-  end
+if ok and local_defs.lualine_vcinfo ~= nil then
+    vcinfo = local_defs.lualine_vcinfo
 end
 
 local function pos_info()
