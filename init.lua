@@ -25,7 +25,7 @@ if not vim.loop.fs_stat(local_lua_path .. "/config.lua") then
   vim.fn.system({"mkdir", "-p", local_lua_path})
   local fp = io.open(local_lua_path .. "/config.lua", "w")
   fp:write([[
-M = {}
+local M = {}
 
 return M
 ]])

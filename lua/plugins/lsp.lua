@@ -1,9 +1,22 @@
 -- luacheck: globals vim
 
 return {
-  'neovim/nvim-lspconfig',
+  -- LSP itself
+  -- Note that for some langauges (python, C++) the config is in the local part
+  -- of the config.
+  {
+    'neovim/nvim-lspconfig',
+    config = function()
+      require('lspconfig').rust_analyzer.setup({})
+    end
+  },
   'onsails/lspkind.nvim',
+  {
+    'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
+    config = function() require('toggle_lsp_diagnostics').init() end
+  },
 
+  -- Completions
   {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -128,8 +141,4 @@ return {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-nvim-lua',
   'f3fora/cmp-spell',
-  {
-    'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim',
-    config = function() require('toggle_lsp_diagnostics').init() end
-  },
 }
