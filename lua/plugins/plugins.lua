@@ -79,5 +79,5 @@ return {
    },
 
    'mbbill/undotree',
-   --~ 'jacquesbh/vim-showmarks',
+   'coderifous/textobj-word-column.vim',  -- Column objects
 }
