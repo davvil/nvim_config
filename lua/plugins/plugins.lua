@@ -54,6 +54,9 @@ return {
 
    'junegunn/limelight.vim',          -- Highlight "current" region
 
+   { 'stevearc/stickybuf.nvim',       -- Do not open files in "sticky windows", e.g. aerial
+     config = function() require("stickybuf").setup() end },
+
    { 'folke/which-key.nvim',          -- Show keybindings
          config = function() require('which-key').setup({}) end },
 
