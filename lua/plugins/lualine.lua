@@ -24,6 +24,10 @@ local function searchcount()
   return string.format('  %d/%d', result.current, denominator)
 end
 
+local function windownr()
+  return ' ' .. vim.fn.winnr()
+end
+
 local colors = {
   fgA = '#252525',
   bgA = '#999999',
@@ -84,7 +88,7 @@ return {
           lualine_a = {'mode'},
           lualine_b = filename_sec,
           lualine_c = {vcinfo},
-          lualine_x = {searchcount},
+          lualine_x = {searchcount, windownr},
           lualine_y = {pos_info},
           lualine_z = {},
         },
@@ -93,7 +97,7 @@ return {
           lualine_a = {},
           lualine_b = {},
           lualine_c = filename_sec,
-          lualine_x = {pos_info, 'progress'},
+          lualine_x = {windownr},
           lualine_y = {},
           lualine_z = {},
         },

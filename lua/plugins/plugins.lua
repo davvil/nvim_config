@@ -44,12 +44,6 @@ return {
    'machakann/vim-highlightedyank',   -- Show the yank region
    'vim-scripts/ReplaceWithRegister', -- Activate with gr{motion) (optionally with register)
    'xiyaowong/virtcolumn.nvim',       -- Nicer colorcolumn
-   { 'https://gitlab.com/yorickpeterse/nvim-window.git',  -- Better jump between windows
-     config = function()
-       require('nvim-window').setup({
-         chars = {'1', '2', '3', '4', '5', '6', '7', '8', '9'}
-       })
-     end },
    { 'kaplanz/nvim-retrail',          -- Deal with end-of-line whitespace
      config = function() require("retrail").setup() end },
    {'axieax/typo.nvim',               -- Handle frequent file typos in the command line
