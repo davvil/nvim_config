@@ -1,5 +1,3 @@
--- luacheck: globals vim
-
 local ls = require('luasnip')
 local s = ls.s
 local n = require('vilar.snippets.nodes')

@@ -1,5 +1,3 @@
--- luacheck: globals vim
-
 -- Frequent typo
 vim.cmd('command! W w')
 -- Close current buffer but keep window layout (from vim-bbye)
