@@ -4,6 +4,15 @@ return {
     config = function()
       local lint = require('lint')
 
+      local luacheck = lint.linters.luacheck
+      -- Expanding the original arguments
+      luacheck.args = {
+        '--formatter', 'plain',
+        '--codes',
+        '--ranges',
+        '--globals', 'vim',
+        '-' }
+
       lint.linters_by_ft = {
         sh = {'shellcheck'},
         lua = {'luacheck'},

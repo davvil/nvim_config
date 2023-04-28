@@ -1,5 +1,3 @@
--- luacheck: globals vim
-
 local vcinfo = function() return "" end
 local ok, local_defs = pcall(require, 'local.config')
 if ok and local_defs.lualine_vcinfo ~= nil then

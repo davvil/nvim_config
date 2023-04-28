@@ -1,5 +1,3 @@
--- luacheck: globals vim
-
 return {
   {
     'rebelot/kanagawa.nvim',

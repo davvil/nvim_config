@@ -1,5 +1,3 @@
--- luacheck: globals vim
-
 return {
   -- Python
   'Vimjas/vim-python-pep8-indent',

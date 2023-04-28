@@ -1,5 +1,3 @@
--- luacheck: globals vim
-
 -- Lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -19,7 +17,7 @@ if not vim.loop.fs_stat(local_lua_path .. "/plugins.lua") then
   vim.fn.system({"mkdir", "-p", local_lua_path})
   local fp = io.open(local_lua_path .. "/plugins.lua", "w")
   fp:write("return {}")
-  fp.close()
+  fp:close()
 end
 if not vim.loop.fs_stat(local_lua_path .. "/config.lua") then
   vim.fn.system({"mkdir", "-p", local_lua_path})
@@ -29,7 +27,7 @@ local M = {}
 
 return M
 ]])
-  fp.close()
+  fp:close()
 end
 
 require('lazy').setup({
