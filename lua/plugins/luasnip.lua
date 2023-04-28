@@ -29,6 +29,7 @@ return {
 
       require('vilar.snippets.python')
       require('vilar.snippets.sh')
+      require('vilar.snippets.telekasten')
       pcall(require, 'local.snippets')
     end
   }

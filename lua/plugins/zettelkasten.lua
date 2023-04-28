@@ -59,6 +59,7 @@ return {
       autocmd FileType telekasten map <buffer> <Leader>c :call ToggleConceallevel()<CR>
       autocmd FileType telekasten setlocal cole=2
       autocmd FileType telekasten setlocal nowrap
+      autocmd FileType telekasten lua require('luasnip').config.setup({enable_autosnippets = true })
       ]])
     end
   }
