@@ -69,7 +69,14 @@ return {
    {
      'nvim-tree/nvim-tree.lua',
      config = function()
-       require("nvim-tree").setup()
+       local function nvim_tree_on_attach(bufnr)
+         local api = require('nvim-tree.api')
+
+         api.config.mappings.default_on_attach(bufnr)
+         vim.keymap.set('n', '<tab>', function() require('vilar.util').window_next() end, {buffer = bufnr, noremap = true, silent = true, nowait = true })
+       end
+
+       require("nvim-tree").setup({on_attach=nvim_tree_on_attach})
      end
    },
 

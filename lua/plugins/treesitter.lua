@@ -67,12 +67,26 @@ return {
         context_commentstring = {
           enable = true
         },
+
+        rainbow = {
+          enable = true,
+            hlgroups = {
+               'TSRainbowGreen',
+               'TSRainbowYellow',
+               'TSRainbowBlue',
+               'TSRainbowOrange',
+               'TSRainbowViolet',
+               'TSRainbowCyan',
+               'TSRainbowRed',
+            },
+        },
       }
       end
     },
 
    'nvim-treesitter/nvim-treesitter-textobjects',
-   'JoosepAlviste/nvim-ts-context-commentstring',
+   'JoosepAlviste/nvim-ts-context-commentstring',  -- Set the correct commentstring also with embedded languages
+   'HiPhish/nvim-ts-rainbow2',
    {
      'code-biscuits/nvim-biscuits',       -- Show context of closing parentheses
      enabled = true,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
