@@ -33,22 +33,33 @@ return {
             ["@keyword.return"] = { italic = false },
             ["@variable.builtin"] = { italic = false },
             ["@comment.code"] = { fg = colors.palette.fujiGray },
+            TSRainbowRed = { fg = colors.palette.autumnRed },
+            TSRainbowYellow = { fg = colors.palette.carpYellow },
+            TSRainbowBlue = { fg = colors.palette.dragonBlue },
+            TSRainbowOrange = { fg = colors.palette.surimiOrange },
+            TSRainbowGreen = { fg = colors.palette.springGreen },
+            TSRainbowViolet = { fg = colors.palette.oniViolet },
+            TSRainbowCyan = { fg = colors.palette.waveAqua1 },
           }
         end,
       })
     end
   },
 
-  { 'mcchrish/zenbones.nvim', dependencies = { 'rktjmp/lush.nvim' } },
-  { 'uloco/bluloco.nvim', dependencies = { 'rktjmp/lush.nvim' } },
   {
-    'folke/tokyonight.nvim',
+    "catppuccin/nvim",
+    name = "catppuccin",
     config = function()
-      require("tokyonight").setup({
-        on_colors = function(colors)
-          colors.bg = "#000000"
-        end
+      require("catppuccin").setup({
+        custom_highlights = function(colors)
+          return {
+            IndentBlanklineIndent1 = { fg = "#49443C" },
+            IndentBlanklineIndent2 = { fg = "#2B3328" },
+            IndentBlanklineIndent3 = { fg = "#43242B" },
+            IndentBlanklineIndent4 = { fg = "#252535" },
+          }
+        end,
       })
-    end
+    end,
   },
 }

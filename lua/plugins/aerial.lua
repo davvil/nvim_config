@@ -12,8 +12,8 @@ return {
     })
     require('telescope').load_extension('aerial')
     local map = require('vilar.keybindings').map
-    map("<leader>o", ":AerialToggle<CR>")
-    map("<leader>O", ":Telescope aerial<CR>")
+    map("<leader>o", ":Telescope aerial<CR>")
+    map("<leader>O", ":AerialToggle<CR>")
   end
   }
 }
