@@ -18,7 +18,6 @@ ls.add_snippets("telekasten", {
 
   s('pi', n.t('π')),
 
-  --~ s('_i ', n.t('ᵢ')),
   sw('_i ', 'ᵢ'),
   sw('_k ', 'ₖ'),
   sw('_n ', 'ₙ'),
@@ -26,5 +25,10 @@ ls.add_snippets("telekasten", {
   sw('^2 ', '²'),
   sw('^3 ', '³'),
   sw('^n ', 'ⁿ'),
+
+  sw('%->', '→'),
+  sw('<%-', '←'),
+  sw('=>', '⇒'),
+  sw('<=', '⇐'),
 },
 {type='autosnippets'})
