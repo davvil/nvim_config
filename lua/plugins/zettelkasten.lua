@@ -61,6 +61,7 @@ return {
       autocmd FileType telekasten setlocal cole=2
       autocmd FileType telekasten setlocal nowrap
       autocmd FileType telekasten lua require('luasnip').config.setup({enable_autosnippets = true })
+      autocmd FileType telekasten lua require('dressing').setup({input={enabled=false}})
       ]])
     end
   }
