@@ -62,6 +62,7 @@ return {
       autocmd FileType telekasten setlocal nowrap
       autocmd FileType telekasten lua require('luasnip').config.setup({enable_autosnippets = true })
       autocmd FileType telekasten lua require('dressing').setup({input={enabled=false}})
+      autocmd BufReadPost *.md lua require('vilar.util').telekasten_weekly_todos()
       ]])
     end
   }
