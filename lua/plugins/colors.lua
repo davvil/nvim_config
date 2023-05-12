@@ -62,4 +62,6 @@ return {
       })
     end,
   },
+
+  'atelierbram/Base2Tone-nvim',
 }
