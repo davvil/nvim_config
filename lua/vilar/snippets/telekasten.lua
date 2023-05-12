@@ -30,5 +30,7 @@ ls.add_snippets("telekasten", {
   sw('<%-', ' '),
   sw('=>', '󰧂 '),
   sw('<=', '󰧀 '),
+
+  sw(' < ', ' &lt; '),
 },
 {type='autosnippets'})
