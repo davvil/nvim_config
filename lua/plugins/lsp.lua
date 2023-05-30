@@ -66,6 +66,7 @@ return {
             require('luasnip').lsp_expand(args.body)
           end,
         },
+        preselect = cmp.PreselectMode.None,
 
         mapping = cmp.mapping.preset.insert({
           --~ ['<CR>'] = cmp.mapping.confirm({ select = false }),
