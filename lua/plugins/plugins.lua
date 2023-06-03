@@ -32,54 +32,59 @@ return {
     end
   },
 
-   'stevearc/dressing.nvim',           -- Nicer "dialogs"
+  'stevearc/dressing.nvim',           -- Nicer "dialogs"
 
-   'junegunn/vim-easy-align',         -- align with ga
-   'tpope/vim-surround',              -- Change parenthesis, etc. (command + s + motion)
-   'dhruvasagar/vim-table-mode',      -- start with \tm
-   'tpope/vim-repeat',                -- Better repeat with .
-   'moll/vim-bbye',                   -- Delete buffers keeping window layout
-   'machakann/vim-highlightedyank',   -- Show the yank region
-   'vim-scripts/ReplaceWithRegister', -- Activate with gr{motion) (optionally with register)
-   'xiyaowong/virtcolumn.nvim',       -- Nicer colorcolumn
-   { 'kaplanz/nvim-retrail',          -- Deal with end-of-line whitespace
-     config = function() require("retrail").setup() end },
-   {'axieax/typo.nvim',               -- Handle frequent file typos in the command line
-     config = function() require("typo").setup() end },
+  'junegunn/vim-easy-align',         -- align with ga
+  'tpope/vim-surround',              -- Change parenthesis, etc. (command + s + motion)
+  'dhruvasagar/vim-table-mode',      -- start with \tm
+  'tpope/vim-repeat',                -- Better repeat with .
+  'moll/vim-bbye',                   -- Delete buffers keeping window layout
+  'machakann/vim-highlightedyank',   -- Show the yank region
+  'vim-scripts/ReplaceWithRegister', -- Activate with gr{motion) (optionally with register)
+  'xiyaowong/virtcolumn.nvim',       -- Nicer colorcolumn
+  { 'kaplanz/nvim-retrail',          -- Deal with end-of-line whitespace
+    config = function() require("retrail").setup() end },
+  {'axieax/typo.nvim',               -- Handle frequent file typos in the command line
+    config = function() require("typo").setup() end },
 
-   { 'davvil/vim-commentary',         -- Changed comments to add ~
-     branch='tilde-comment' },
+  { 'davvil/vim-commentary',         -- Changed comments to add ~
+    branch='tilde-comment' },
 
-   'junegunn/limelight.vim',          -- Highlight "current" region
+  'junegunn/limelight.vim',          -- Highlight "current" region
 
-   { 'stevearc/stickybuf.nvim',       -- Do not open files in "sticky windows", e.g. aerial
-     config = function() require("stickybuf").setup() end },
+  { 'stevearc/stickybuf.nvim',       -- Do not open files in "sticky windows", e.g. aerial
+    config = function() require("stickybuf").setup() end },
 
-   { 'folke/which-key.nvim',          -- Show keybindings
-         config = function() require('which-key').setup({}) end },
+  { 'folke/which-key.nvim',          -- Show keybindings
+        config = function() require('which-key').setup({}) end },
 
-   'godlygeek/tabular',
-   {
-     'preservim/vim-markdown',
-     config = function()
-       vim.g.vim_markdown_new_list_item_indent = 2
-     end
-   },
+  'godlygeek/tabular',
+  {
+    'preservim/vim-markdown',
+    config = function()
+      vim.g.vim_markdown_new_list_item_indent = 2
+    end
+  },
 
-   {
-     'nvim-tree/nvim-tree.lua',
-     config = function()
-       local function nvim_tree_on_attach(bufnr)
-         local api = require('nvim-tree.api')
+  {
+    'windwp/nvim-autopairs',
+    config = function() require("nvim-autopairs").setup {} end,
+  },
 
-         api.config.mappings.default_on_attach(bufnr)
-         vim.keymap.set('n', '<tab>', function() require('vilar.util').window_next() end, {buffer = bufnr, noremap = true, silent = true, nowait = true })
-       end
+  {
+    'nvim-tree/nvim-tree.lua',
+    config = function()
+      local function nvim_tree_on_attach(bufnr)
+        local api = require('nvim-tree.api')
 
-       require("nvim-tree").setup({on_attach=nvim_tree_on_attach})
-     end
-   },
+        api.config.mappings.default_on_attach(bufnr)
+        vim.keymap.set('n', '<tab>', function() require('vilar.util').window_next() end, {buffer = bufnr, noremap = true, silent = true, nowait = true })
+      end
 
-   'mbbill/undotree',
-   'coderifous/textobj-word-column.vim',  -- Column objects
+      require("nvim-tree").setup({on_attach=nvim_tree_on_attach})
+    end
+  },
+
+  'mbbill/undotree',
+  'coderifous/textobj-word-column.vim',  -- Column objects
 }
