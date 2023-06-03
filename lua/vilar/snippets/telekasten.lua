@@ -16,7 +16,7 @@ ls.add_snippets("telekasten", {
   s('\\sum ', n.t('∑')),
   s('\\prod ', n.t('∏')),
 
-  s('pi', n.t('π')),
+  s('\\pi ', n.t('π')),
 
   sw('_i ', 'ᵢ'),
   sw('_k ', 'ₖ'),

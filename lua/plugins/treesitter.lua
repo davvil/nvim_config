@@ -89,7 +89,7 @@ return {
    'HiPhish/nvim-ts-rainbow2',
    {
      'code-biscuits/nvim-biscuits',       -- Show context of closing parentheses
-     enabled = true,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
+     enabled = false,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
      build = ':TSUpdate',
      config = function()
        require('nvim-biscuits').setup({
