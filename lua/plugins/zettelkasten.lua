@@ -33,11 +33,11 @@ return {
       nnoremap <leader>zF :lua require('telekasten').find_friends()<CR>
       nnoremap <leader>zI :lua require('telekasten').insert_img_link({ i=true })<CR>
       "~ nnoremap <leader>zp :lua require('telekasten').preview_img()<CR>
-      nnoremap <leader>zp :lua require('vilar.zettelpapis').search_papis()<CR>
       nnoremap <leader>zm :lua require('telekasten').browse_media()<CR>
       nnoremap <leader>za :lua require('telekasten').show_tags()<CR>
       nnoremap <leader>z# :lua require('telekasten').show_tags()<CR>
       nnoremap <leader>zr :lua require('telekasten').rename_note()<CR>
+      nnoremap <leader>zp :PapisShowPopup<CR>
 
       " on hesitation, bring up the panel
       nnoremap <leader>z :lua require('telekasten').panel()<CR>
