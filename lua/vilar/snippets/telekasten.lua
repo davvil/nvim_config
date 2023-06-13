@@ -17,6 +17,7 @@ ls.add_snippets("telekasten", {
   s('\\prod ', n.t('∏')),
 
   s('\\pi ', n.t('π')),
+  s('\\epsilon ', n.t('ε')),
 
   sw('_i ', 'ᵢ'),
   sw('_k ', 'ₖ'),
