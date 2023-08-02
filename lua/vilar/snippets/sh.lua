@@ -12,17 +12,6 @@ local function required_flags(flag_type)
   return n.sn(nil, n.c(1, {n.t'', required}, "Flag required?"))
 end
 
-local function shellcheck_assignment(flag_name)
-  return n.sn(nil, n.c(1, {
-      n.t({
-        '',
-        string.format('FLAGS_%s=""  # To avoid shellcheck warnings', flag_name[1][1])
-      }),
-      n.t'',
-    }, "Shellcheck?"
-  ))
-end
-
 ls.add_snippets("sh", {
   s('@gbash', n.t({
     'source gbash.sh || exit',
@@ -31,15 +20,13 @@ ls.add_snippets("sh", {
 
 -- flags
   s('@flag',
-  fmt('DEFINE_{flag_type} {required}{flag_name} "{default}" "{help}"{shellcheck}',
+  fmt('DEFINE_{flag_type} {flag_name} {required}"{default}" "{help}"',
     {
       flag_type = n.c(1, {n.t'string', n.t'int', n.t'bool', n.t'double'}, "Flag type"),
       flag_name = n.i(2, "Flag name"),
       default = n.i(3, "Default value"),
       help = n.i(4, "Help message"),
       required = n.d(5, required_flags, {1}),
-      --~ shellcheck = n.d(6, shellcheck_assignment, {2}),
-      shellcheck = n.d(6, shellcheck_assignment, {2}),
     })
   ),
 

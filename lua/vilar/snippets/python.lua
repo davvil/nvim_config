@@ -17,7 +17,7 @@ end
 
 local function gen_docstring()
   local row, column = unpack(vim.api.nvim_win_get_cursor(0))
-  local node = vim.treesitter.get_node_at_pos(0, row, column)
+  local node = vim.treesitter.get_node(0, row, column)
   while node and node:type() ~= "function_definition" do
     node = node:parent()
   end
@@ -50,7 +50,7 @@ end
 
 -- Docstring generation
 ls.add_snippets("python", {
-    s('@"""', fmt([[
+    s('@docstring', fmt([[
 """
 {}
 

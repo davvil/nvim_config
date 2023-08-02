@@ -58,6 +58,12 @@ return {
   { 'folke/which-key.nvim',          -- Show keybindings
         config = function() require('which-key').setup({}) end },
 
+  {
+    'mg979/vim-visual-multi',
+    branch='master',
+    config = function() vim.cmd("VMTheme purplegray") end,
+  },
+
   'godlygeek/tabular',
   {
     'preservim/vim-markdown',
