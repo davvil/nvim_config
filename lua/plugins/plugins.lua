@@ -55,8 +55,8 @@ return {
   { 'stevearc/stickybuf.nvim',       -- Do not open files in "sticky windows", e.g. aerial
     config = function() require("stickybuf").setup() end },
 
-  { 'folke/which-key.nvim',          -- Show keybindings
-        config = function() require('which-key').setup({}) end },
+  --~ { 'folke/which-key.nvim',          -- Show keybindings
+  --~       config = function() require('which-key').setup({}) end },
 
   {
     'mg979/vim-visual-multi',
@@ -100,4 +100,15 @@ return {
 
   'mbbill/undotree',
   'coderifous/textobj-word-column.vim',  -- Column objects
+  {
+    'lervag/vimtex',
+    config = function()
+      vim.cmd([[
+      let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \]
+      ]])
+    end
+  },
 }

@@ -9,7 +9,7 @@ return {
       require('lspconfig').rust_analyzer.setup({})
 
       -- Lua
-      require'lspconfig'.lua_ls.setup {
+      require('lspconfig').lua_ls.setup({
         settings = {
           Lua = {
             runtime = {
@@ -31,7 +31,10 @@ return {
             },
           },
         },
-      }
+      })
+
+      -- LaTeX
+      --~ require('lspconfig').texlab.setup({})
     end
   },
   'onsails/lspkind.nvim',
@@ -116,6 +119,7 @@ return {
           { name = 'luasnip' },
           { name = 'nvim_ciderlsp' },
           { name = 'nvim_lsp' },
+          { name = 'omni' },
           { name = 'nvim_lua' },
           { name = 'nvim_lsp_signature_help' },
           { name = 'buffer',
@@ -160,6 +164,7 @@ return {
 
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lsp-signature-help',
+  'hrsh7th/cmp-omni',
   'saadparwaiz1/cmp_luasnip',
   'hrsh7th/cmp-path',
   'hrsh7th/cmp-cmdline',
