@@ -82,8 +82,8 @@ vim.api.nvim_create_autocmd("FileType",
 
 -- Colors
 vim.opt.termguicolors = true
-vim.cmd("colorscheme kanagawa")
---~ vim.cmd("colorscheme tokyonight-moon")
+--~ vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme habamax.nvim")
 
 -- Spelling
 require('vilar.spelling')

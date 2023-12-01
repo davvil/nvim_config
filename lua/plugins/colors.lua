@@ -64,4 +64,6 @@ return {
   },
 
   'atelierbram/Base2Tone-nvim',
+
+  { "ntk148v/habamax.nvim", dependencies={ "rktjmp/lush.nvim" } }
 }
