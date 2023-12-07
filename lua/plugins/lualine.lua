@@ -78,7 +78,7 @@ return {
     config = function()
       require('lualine').setup{
         options={
-          theme = dvt_theme(),
+          --~ theme = dvt_theme(),
           component_separators = { left = '', right = ''},
         },
 

@@ -1,3 +1,6 @@
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 -- Lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -83,7 +86,8 @@ vim.api.nvim_create_autocmd("FileType",
 -- Colors
 vim.opt.termguicolors = true
 --~ vim.cmd("colorscheme kanagawa")
-vim.cmd("colorscheme habamax.nvim")
+--~ vim.cmd("colorscheme habamax.nvim")
+vim.cmd("colorscheme melange")
 
 -- Spelling
 require('vilar.spelling')

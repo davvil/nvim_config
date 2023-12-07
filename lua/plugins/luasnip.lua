@@ -22,7 +22,7 @@ return {
         end
       end, { silent = true })
 
-      vim.keymap.set('n', '<leader><leader>s',
+      vim.keymap.set('n', '<Leader><leader>s',
         '<cmd>source ~/.config/nvim/lua/vilar/luasnip.lua<CR>')
 
       require('vilar.snippets.python')

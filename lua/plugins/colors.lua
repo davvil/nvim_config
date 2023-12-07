@@ -46,24 +46,10 @@ return {
     end
   },
 
-  {
-    "catppuccin/nvim",
-    name = "catppuccin",
-    config = function()
-      require("catppuccin").setup({
-        custom_highlights = function(colors)
-          return {
-            IndentBlanklineIndent1 = { fg = "#49443C" },
-            IndentBlanklineIndent2 = { fg = "#2B3328" },
-            IndentBlanklineIndent3 = { fg = "#43242B" },
-            IndentBlanklineIndent4 = { fg = "#252535" },
-          }
-        end,
-      })
-    end,
-  },
 
   'atelierbram/Base2Tone-nvim',
+
+  {"savq/melange-nvim"},
 
   { "ntk148v/habamax.nvim", dependencies={ "rktjmp/lush.nvim" } }
 }
