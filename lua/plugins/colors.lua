@@ -46,10 +46,7 @@ return {
     end
   },
 
-
-  'atelierbram/Base2Tone-nvim',
-
-  {"savq/melange-nvim"},
+  {"davvil/melange-nvim"},
 
   { "ntk148v/habamax.nvim", dependencies={ "rktjmp/lush.nvim" } }
 }
