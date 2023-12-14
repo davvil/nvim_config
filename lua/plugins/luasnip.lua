@@ -25,6 +25,7 @@ return {
       vim.keymap.set('n', '<Leader><leader>s',
         '<cmd>source ~/.config/nvim/lua/vilar/luasnip.lua<CR>')
 
+      require('vilar.snippets.all')
       require('vilar.snippets.python')
       require('vilar.snippets.sh')
       require('vilar.snippets.telekasten')

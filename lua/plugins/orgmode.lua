@@ -1,3 +1,5 @@
+local map = require('vilar.keybindings').map
+
 return {
   {
     "nvim-neorg/neorg",
@@ -7,7 +9,17 @@ return {
       require("neorg").setup {
         load = {
           ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.concealer"] = { -- Adds pretty icons to your documents
+            config = {
+              icons = {
+                todo = {
+                  undone = {
+                    icon = " ",
+                  }
+                }
+              }
+            }
+          },
           ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
               workspaces = {
@@ -20,6 +32,8 @@ return {
         },
       }
       vim.cmd("autocmd FileType norg setlocal cole=2")
+
+      map("<Leader>tl", ":lua require('telescope.builtin').grep_string({search='( )'})<CR>")
     end,
   },
 }
