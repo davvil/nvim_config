@@ -1,3 +1,5 @@
+local map = require('vilar.keybindings').map
+
 return {
   {
     "nvim-neorg/neorg",
@@ -30,6 +32,8 @@ return {
         },
       }
       vim.cmd("autocmd FileType norg setlocal cole=2")
+
+      map("<Leader>tl", ":lua require('telescope.builtin').grep_string({search='( )'})<CR>")
     end,
   },
 }
