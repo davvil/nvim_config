@@ -1,7 +1,15 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
   main = "ibl",
-  opts = {}
+  opts = {},
+  config = function()
+    require("ibl").setup({
+      scope = {
+        show_start = false,
+        show_end = false,
+      }
+    })
+  end
 
   --~ {'lukas-reineke/indent-blankline.nvim', -- Indentation guides
   --~ config=function()
