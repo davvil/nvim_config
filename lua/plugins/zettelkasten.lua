@@ -49,10 +49,10 @@ return {
       "~ inoremap <Leader>zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
       "~ inoremap <Leader>z# <cmd>lua require('telekasten').show_tags({i = true})<cr>
       "~ inoremap <Leader>zp <cmd>Telescope papis<cr>
-      inoremap \z[ <cmd>:lua require('telekasten').insert_link({ i=true })<CR>
-      inoremap \zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
-      inoremap \z# <cmd>lua require('telekasten').show_tags({i = true})<cr>
-      inoremap \zp <cmd>Telescope papis<cr>
+      "~ inoremap \z[ <cmd>:lua require('telekasten').insert_link({ i=true })<CR>
+      "~ inoremap \zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
+      "~ inoremap \z# <cmd>lua require('telekasten').show_tags({i = true})<cr>
+      "~ inoremap \zp <cmd>Telescope papis<cr>
 
       function ToggleConceallevel()
         if &cole == 0

@@ -31,9 +31,14 @@ return {
           ["core.summary"] = {},
         },
       }
-      vim.cmd("autocmd FileType norg setlocal cole=2")
-      vim.cmd("autocmd FileType norg setlocal concealcursor=ncv")
-      vim.cmd("autocmd FileType norg setlocal nowrap")
+      vim.cmd([[
+        autocmd FileType norg setlocal cole=2
+        autocmd FileType norg setlocal concealcursor=ncv
+        autocmd FileType norg setlocal nowrap
+        map <leader>pi <cmd>Telescope papis<cr>
+        map <Leader>pk :PapisShowPopup<CR>
+        map <Leader>pv :PapisOpenFile<CR>
+      ]])
 
       map("<Leader>tl", ":lua require('telescope.builtin').grep_string({search='( )'})<CR>")
       map("<Leader>nm", ":lua require('nabla').enable_virt(); vim.cmd('setlocal concealcursor=ncv')<CR>")
