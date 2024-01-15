@@ -11,7 +11,11 @@ return {
       vim.cmd('command! Help Telescope help_tags theme=dropdown')
       vim.cmd('command! Set Telescope vim_options theme=dropdown')
 
-      require("telescope").setup({ })
+      require('telescope').setup{
+        defaults = {
+          layout_config = { width = 0.9 },
+        },
+      }
     end
   },
 
