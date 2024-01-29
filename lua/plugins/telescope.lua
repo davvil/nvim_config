@@ -5,11 +5,11 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' },
     config = function()
       vim.cmd('command! F Telescope file_browser')
-      vim.cmd('command! Grep Telescope live_grep theme=dropdown')
-      vim.cmd('command! B Telescope buffers theme=dropdown')
-      vim.cmd('command! S Telescope search_history theme=dropdown')
-      vim.cmd('command! Help Telescope help_tags theme=dropdown')
-      vim.cmd('command! Set Telescope vim_options theme=dropdown')
+      vim.cmd('command! Grep Telescope live_grep')
+      vim.cmd('command! B Telescope buffers')
+      vim.cmd('command! S Telescope search_history')
+      vim.cmd('command! Help Telescope help_tags')
+      vim.cmd('command! Set Telescope vim_options')
 
       require('telescope').setup{
         defaults = {
