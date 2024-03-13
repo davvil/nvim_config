@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Diagnostic symbols
+require('vilar.diagnostics')
+
 -- Lazy plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -103,8 +106,11 @@ require('vilar.keybindings')
 -- Command and function definitions
 require('vilar.commands')
 
--- Diagnostic symbols
-require('vilar.diagnostics')
-
 -- Load local config (if it exists)
 pcall(require, 'local.config')
+
+-- Disable the inline diagnostics, as this is handled by the plugins
+vim.diagnostic.config({
+  virtual_text = false,
+})
+
