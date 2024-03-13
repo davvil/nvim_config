@@ -171,4 +171,23 @@ return {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-nvim-lua',
   'f3fora/cmp-spell',
+
+  {  -- Show diagnostics only in the corner
+    'dgagn/diagflow.nvim',
+    -- event = 'LspAttach', This is what I use personnally and it works great
+    config = function()
+      require('diagflow').setup({
+        show_borders = true,
+        show_sign = false,  -- See https://github.com/dgagn/diagflow.nvim/issues/43
+        scope = 'line',
+        toggle_event = { 'InsertEnter', 'InsertLeave' },
+        border_chars = {
+          top_left = "╭",
+          top_right = "╮",
+          bottom_left = "╰",
+          bottom_right = "╯",
+        }
+      })
+    end,
+  },
 }
