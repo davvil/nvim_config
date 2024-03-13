@@ -49,7 +49,8 @@ vim.opt.expandtab = true      -- Subsitute tabs with...
 vim.opt.softtabstop = 2       -- ...2 spaces
 vim.opt.path = "**"           -- Search in subdirectories
 vim.opt.virtualedit = "block" -- Allow visual model over "shorter" lines
-vim.opt.mouse = "nv"          -- Mouse in normal and visual mode (but not insert!)
+--~ vim.opt.mouse = "nv"          -- Mouse in normal and visual mode (but not insert!)
+vim.opt.mouse = ""            -- Disable mouse
 vim.opt.cursorline = true     -- Highlight current line
 vim.opt.signcolumn = "yes"    -- Column for linting symbols
 vim.opt.completeopt = "noinsert,menuone,noselect" -- Completion menu
@@ -78,9 +79,13 @@ vim.api.nvim_create_autocmd("FileType",
 vim.api.nvim_create_autocmd("FileType",
   { pattern="*", command="setlocal formatoptions-=ro" })
 
+-- Do not treat list items as comments in markdown
+vim.api.nvim_create_autocmd("FileType",
+  { pattern="markdown", command="set comments=b:>" })
+
 -- Specific textwidths
 vim.api.nvim_create_autocmd("FileType",
-  { pattern={"text", "telekasten"},
+  { pattern={"text", "telekasten", "markdown"},
 	command="setlocal tw=80" })
 
 -- Colors

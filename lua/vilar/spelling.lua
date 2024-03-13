@@ -11,3 +11,4 @@ end
 addSpelling("python")
 addSpelling("text")
 addSpelling("telekasten")
+addSpelling("markdown")
