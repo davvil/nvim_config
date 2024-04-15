@@ -1,16 +1,17 @@
 return {
   {
    'renerocksai/telekasten.nvim',
+   dependencies = { "renerocksai/calendar-vim" },
    config=function()
       local home = vim.fn.expand("~/zettelkasten")
       require('telekasten').setup({
           home = home,
-          new_note_filename = "uuid-title",
+          new_note_filename = "uuid",
+          uuid_type = "rand",
           template_new_note = home .. '/' .. 'templates/new_note.md',
           template_new_weekly = home .. '/' .. 'templates/weekly.md',
-          uuid_type = "%Y%m%d%H%M",
-          uuid_sep = "-",
-          sort = "filename",
+          template_new_daily = home .. '/' .. 'templates/daily.md',
+          sort = "modified",
           media_previewer = "localviu-previewer",
           })
 
@@ -43,7 +44,7 @@ return {
       nnoremap <Leader>z :lua require('telekasten').panel()<CR>
 
       " we could define [[ in **insert mode** to call insert link
-      " inoremap [[ <cmd>:lua require('telekasten').insert_link()<CR>
+      autocmd FileType telekasten inoremap <buffer> [[ <cmd>:lua require('telekasten').insert_link({with_live_grep=true})<CR>
       " alternatively: leader [
       "~ inoremap <Leader>z[ <cmd>:lua require('telekasten').insert_link({ i=true })<CR>
       "~ inoremap <Leader>zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>

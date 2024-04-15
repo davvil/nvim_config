@@ -62,12 +62,13 @@ return {
   },
 
   'godlygeek/tabular',
-  {
-    'preservim/vim-markdown',
-    config = function()
-      vim.g.vim_markdown_new_list_item_indent = 2
-    end
-  },
+
+  --~ {
+  --~   'preservim/vim-markdown',
+  --~   config = function()
+  --~     vim.g.vim_markdown_new_list_item_indent = 2
+  --~   end
+  --~ },
 
   {
     'tzachar/highlight-undo.nvim',

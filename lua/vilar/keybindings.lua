@@ -42,5 +42,6 @@ M.map("<Leader>w", ":TroubleToggle<CR>")
 M.nmap("<Leader>n", ":lua vim.diagnostic.goto_next()<CR>")
 M.nmap("<Leader>p", ":lua vim.diagnostic.goto_prev()<CR>")
 M.nmap("<Leader>d", ":lua vim.diagnostic.open_float()<CR>")
+M.nmap("<C-p>", "<C-i>")
 
 return M
