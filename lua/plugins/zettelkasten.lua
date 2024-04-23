@@ -6,6 +6,7 @@ return {
       local home = vim.fn.expand("~/zettelkasten")
       require('telekasten').setup({
           home = home,
+          dailies = home .. '/daily',
           new_note_filename = "uuid",
           uuid_type = "rand",
           template_new_note = home .. '/' .. 'templates/new_note.md',
@@ -39,6 +40,8 @@ return {
       nnoremap <Leader>z# :lua require('telekasten').show_tags()<CR>
       nnoremap <Leader>zr :lua require('telekasten').rename_note()<CR>
       nnoremap <Leader>zp :PapisShowPopup<CR>
+      inoremap \zp <cmd>Telescope papis<cr>
+      nnoremap <Leader>zP :MarkdownPreview<CR>
 
       " on hesitation, bring up the panel
       nnoremap <Leader>z :lua require('telekasten').panel()<CR>
@@ -53,7 +56,6 @@ return {
       "~ inoremap \z[ <cmd>:lua require('telekasten').insert_link({ i=true })<CR>
       "~ inoremap \zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
       "~ inoremap \z# <cmd>lua require('telekasten').show_tags({i = true})<cr>
-      "~ inoremap \zp <cmd>Telescope papis<cr>
 
       function ToggleConceallevel()
         if &cole == 0
@@ -73,5 +75,22 @@ return {
 
       ]])
     end
+  },
+
+  {
+      "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      ft = { "markdown" },
+      build = function() vim.fn["mkdp#util#install"]() end,
+      config=function()
+        vim.cmd([[
+          let g:mkdp_combine_preview = 1
+          let g:mkdp_combine_preview_auto_refresh = 1
+          let g:mkdp_auto_close = 0
+          let g:mkdp_theme = 'dark'
+          let g:mkdp_browser = '/home/vilar/bin/google-chrome-i3-named-app'
+          let g:mkdp_markdown_css = '/home/vilar/.config/nvim/colors/markdown.css'
+        ]])
+      end
   }
 }

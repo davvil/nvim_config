@@ -91,6 +91,10 @@ vim.api.nvim_create_autocmd("FileType",
   { pattern={"text", "telekasten", "markdown"},
 	command="setlocal tw=80" })
 
+-- Asymptote
+vim.api.nvim_create_autocmd({"BufEnter", "BufRead"},
+  { pattern="*.asy", command="setf asy" })
+
 -- Colors
 vim.opt.termguicolors = true
 --~ vim.cmd("colorscheme kanagawa")
