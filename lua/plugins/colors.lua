@@ -48,5 +48,13 @@ return {
 
   {"davvil/melange-nvim"},
 
-  { "ntk148v/habamax.nvim", dependencies={ "rktjmp/lush.nvim" } }
+  { "ntk148v/habamax.nvim", dependencies={ "rktjmp/lush.nvim" } },
+
+  { "mcchrish/zenbones.nvim",
+    dependencies={ "rktjmp/lush.nvim" },
+    config = function()
+      vim.cmd([[autocmd ColorScheme neobones lua require "vilar.customize_zenbones"]])
+    end
+  },
+
 }

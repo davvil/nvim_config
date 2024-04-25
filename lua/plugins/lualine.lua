@@ -111,7 +111,13 @@ return {
           },
           lualine_c = {},
           lualine_x = {},
-          lualine_y = {},
+          lualine_y = {
+            {
+              'filename',
+              file_status=false,
+              path = 3
+            }
+          },
           lualine_z = diagnostics_sec,
         }
       }

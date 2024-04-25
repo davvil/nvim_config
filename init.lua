@@ -99,7 +99,7 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufRead"},
 vim.opt.termguicolors = true
 --~ vim.cmd("colorscheme kanagawa")
 --~ vim.cmd("colorscheme habamax.nvim")
-vim.cmd("colorscheme melange")
+vim.cmd("colorscheme neobones")
 
 -- Spelling
 require('vilar.spelling')
