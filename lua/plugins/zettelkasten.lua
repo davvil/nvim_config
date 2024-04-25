@@ -71,7 +71,7 @@ return {
       autocmd FileType telekasten lua require('dressing').setup({input={enabled=false}})
       autocmd BufReadPost *.md lua require('vilar.util').telekasten_weekly_todos()
 
-      map <Leader>zlt :lua require('telescope.builtin').grep_string({search='[ ] TODO'})<CR>
+      map <Leader>zlt :lua require('telescope.builtin').grep_string({search='[ ] TODO', cwd=vim.fn.expand('~/zettelkasten')})<CR>
 
       ]])
     end
