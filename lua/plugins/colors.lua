@@ -53,8 +53,10 @@ return {
   { "mcchrish/zenbones.nvim",
     dependencies={ "rktjmp/lush.nvim" },
     config = function()
-      vim.cmd([[autocmd ColorScheme neobones lua require "vilar.customize_zenbones"]])
+      vim.cmd([[autocmd ColorScheme neobones lua require "vilar.customize_zenbones".customize()]])
     end
   },
 
+  { "aktersnurra/no-clown-fiesta.nvim" },
+  { "mcauley-penney/ice-cave.nvim" },
 }
