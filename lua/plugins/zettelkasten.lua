@@ -14,6 +14,8 @@ return {
           template_new_daily = home .. '/' .. 'templates/daily.md',
           sort = "modified",
           media_previewer = "localviu-previewer",
+          --~ take_over_my_home = false,
+          --~ auto_set_filetype = false,
           })
 
       vim.cmd([[
@@ -40,14 +42,14 @@ return {
       nnoremap <Leader>z# :lua require('telekasten').show_tags()<CR>
       nnoremap <Leader>zr :lua require('telekasten').rename_note()<CR>
       nnoremap <Leader>zp :PapisShowPopup<CR>
-      inoremap \zp <cmd>Telescope papis<cr>
-      nnoremap <Leader>zP :MarkdownPreview<CR>
 
       " on hesitation, bring up the panel
       nnoremap <Leader>z :lua require('telekasten').panel()<CR>
 
       " we could define [[ in **insert mode** to call insert link
       autocmd FileType telekasten inoremap <buffer> [[ <cmd>:lua require('telekasten').insert_link({with_live_grep=true})<CR>
+      autocmd FileType telekasten inoremap \zp <cmd>Telescope papis<CR>
+      autocmd FileType telekasten nnoremap <Leader>zP :MarkdownPreview<CR>
       " alternatively: leader [
       "~ inoremap <Leader>z[ <cmd>:lua require('telekasten').insert_link({ i=true })<CR>
       "~ inoremap <Leader>zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
