@@ -18,6 +18,8 @@ return {
           --~ auto_set_filetype = false,
           })
 
+
+
       vim.cmd([[
       nnoremap <Leader>zf :lua require('telekasten').find_notes()<CR>
       nnoremap <Leader>zd :lua require('telekasten').find_daily_notes()<CR>
@@ -47,7 +49,8 @@ return {
       nnoremap <Leader>z :lua require('telekasten').panel()<CR>
 
       " we could define [[ in **insert mode** to call insert link
-      autocmd FileType telekasten inoremap <buffer> [[ <cmd>:lua require('telekasten').insert_link({with_live_grep=true})<CR>
+      "~ autocmd FileType telekasten inoremap <buffer> [[ <cmd>:lua require('telekasten').insert_link({with_live_grep=true})<CR>
+      autocmd FileType telekasten inoremap <buffer> [[ <cmd>:lua require('vilar.util').tkInsertLinkWithTitle({with_live_grep=true})<CR>
       autocmd FileType telekasten inoremap \zp <cmd>Telescope papis<CR>
       autocmd FileType telekasten nnoremap <Leader>zP :MarkdownPreview<CR>
       " alternatively: leader [

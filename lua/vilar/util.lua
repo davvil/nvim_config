@@ -55,4 +55,60 @@ function M.telekasten_weekly_todos()
   end
 end
 
+-- Function for telekasten to set a link with a custom display text
+-- Most of the body taken over from InsertLink in the main telekasten
+-- implementation
+function M.tkInsertLinkWithTitle(opts)
+    local tk = require('telekasten')
+    local actions = require('telescope.actions')
+    local action_state = require('telescope.actions.state')
+    opts = opts or {}
+    opts.insert_after_inserting = opts.insert_after_inserting
+        or tk.Cfg.insert_after_inserting
+    opts.close_after_yanking = opts.close_after_yanking
+        or tk.Cfg.close_after_yanking
+    opts.subdirs_in_links = opts.subdirs_in_links or tk.Cfg.subdirs_in_links
+
+    local cwd = tk.Cfg.home
+    local find_command = tk.Cfg.find_command
+    local sort = tk.Cfg.sort
+    local attach_mappings = function(prompt_bufnr, map)
+        actions.select_default:replace(function()
+            actions.close(prompt_bufnr)
+            local selection = action_state.get_selected_entry()
+            if selection == nil then
+                selection = { filename = action_state.get_current_line() }
+            end
+            local basename = selection.filename:match("(.+)%..+")
+            local display_text = vim.fn.input("Display text? ")
+            vim.api.nvim_put(
+                { " [[" .. basename .. "|" .. display_text .. "]]" },
+                "",
+                false,
+                true
+            )
+            vim.api.nvim_feedkeys("a", "m", false)
+        end)
+        return true
+    end
+
+    if opts.with_live_grep then
+        require('telescope.builtin').live_grep({
+            prompt_title = "Insert link to note with live grep",
+            cwd = cwd,
+            attach_mappings = attach_mappings,
+            find_command = find_command,
+            sort = sort,
+        })
+    else
+        tk.find_files_sorted({
+            prompt_title = "Insert link to note",
+            cwd = cwd,
+            attach_mappings = attach_mappings,
+            find_command = find_command,
+            sort = sort,
+        })
+    end
+end
+
 return M
