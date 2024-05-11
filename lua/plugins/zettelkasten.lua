@@ -23,7 +23,7 @@ return {
       vim.cmd([[
       nnoremap <Leader>zf :lua require('telekasten').find_notes()<CR>
       nnoremap <Leader>zd :lua require('telekasten').find_daily_notes()<CR>
-      nnoremap <Leader>zg :lua require('telekasten').search_notes()<CR>
+      nnoremap <Leader>zg :lua require('telekasten').search_notes({default_text=""})<CR>
       nnoremap <Leader>zz :lua require('telekasten').follow_link()<CR>
       nnoremap <Leader>zT :lua require('telekasten').goto_today()<CR>
       nnoremap <Leader>zW :lua require('telekasten').goto_thisweek()<CR>
