@@ -14,8 +14,8 @@ return {
           template_new_daily = home .. '/' .. 'templates/daily.md',
           sort = "modified",
           media_previewer = "localviu-previewer",
-          --~ take_over_my_home = false,
-          --~ auto_set_filetype = false,
+          take_over_my_home = false,
+          auto_set_filetype = false,
           })
 
 
@@ -50,9 +50,9 @@ return {
 
       " we could define [[ in **insert mode** to call insert link
       "~ autocmd FileType telekasten inoremap <buffer> [[ <cmd>:lua require('telekasten').insert_link({with_live_grep=true})<CR>
-      autocmd FileType telekasten inoremap <buffer> [[ <cmd>:lua require('vilar.util').tkInsertLinkWithTitle({with_live_grep=true})<CR>
-      autocmd FileType telekasten inoremap \zp <cmd>Telescope papis<CR>
-      autocmd FileType telekasten nnoremap <Leader>zP :MarkdownPreview<CR>
+      autocmd FileType markdown inoremap <buffer> [[ <cmd>:lua require('vilar.util').tkInsertLinkWithTitle({with_live_grep=true})<CR>
+      autocmd FileType markdown inoremap \zp <cmd>Telescope papis<CR>
+      autocmd FileType markdown nnoremap <Leader>zP :MarkdownPreview<CR>
       " alternatively: leader [
       "~ inoremap <Leader>z[ <cmd>:lua require('telekasten').insert_link({ i=true })<CR>
       "~ inoremap <Leader>zt <cmd>:lua require('telekasten').toggle_todo({ i=true })<CR>
@@ -69,12 +69,12 @@ return {
           setlocal cole=0
         endif
       endfunction
-      autocmd FileType telekasten map <buffer> <Leader>c :call ToggleConceallevel()<CR>
+      autocmd FileType markdown map <buffer> <Leader>c :call ToggleConceallevel()<CR>
       autocmd FileType telekasten setlocal cole=2
-      autocmd FileType telekasten setlocal nowrap
-      autocmd FileType telekasten lua require('luasnip').config.setup({enable_autosnippets = true })
-      autocmd FileType telekasten lua require('dressing').setup({input={enabled=false}})
-      autocmd BufReadPost *.md lua require('vilar.util').telekasten_weekly_todos()
+      autocmd FileType markdown setlocal nowrap
+      autocmd FileType markdown lua require('luasnip').config.setup({enable_autosnippets = true })
+      autocmd FileType markdown lua require('dressing').setup({input={enabled=false}})
+      "~ autocmd BufReadPost *.md lua require('vilar.util').telekasten_weekly_todos()
 
       map <Leader>zlt :lua require('telescope.builtin').grep_string({search='[ ] TODO', cwd=vim.fn.expand('~/zettelkasten')})<CR>
 

@@ -63,12 +63,18 @@ return {
 
   'godlygeek/tabular',
 
-  --~ {
-  --~   'preservim/vim-markdown',
-  --~   config = function()
-  --~     vim.g.vim_markdown_new_list_item_indent = 2
-  --~   end
-  --~ },
+  {
+    'MeanderingProgrammer/markdown.nvim',
+    name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('render-markdown').setup({
+        checkbox = { unchecked = '󰄱', checked = '󰄵' },
+        --~ headings = { '◉ ', '◎ ', '○ ', '✺ ', '▶ ', '⤷ ' },
+        headings = { "◈ ", "◇ ", "◆ ", "⋄ ", "❖ ", "⟡ " },
+      })
+    end,
+  },
 
   {
     'tzachar/highlight-undo.nvim',
@@ -77,10 +83,10 @@ return {
     end
   },
 
-  {
-    'windwp/nvim-autopairs',
-    config = function() require("nvim-autopairs").setup {} end,
-  },
+  --~ {
+  --~   'windwp/nvim-autopairs',
+  --~   config = function() require("nvim-autopairs").setup {} end,
+  --~ },
 
   {
     'nvim-tree/nvim-tree.lua',
@@ -109,4 +115,12 @@ return {
       ]])
     end
   },
+
+  {  -- Window with recent yanks
+    "ptdewey/yankbank-nvim",
+    config = function()
+        require('yankbank').setup()
+	vim.keymap.set("n", "<leader>y", "<cmd>YankBank<CR>", { noremap = true })
+    end,
+}
 }
