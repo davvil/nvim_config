@@ -19,6 +19,14 @@ function _M.customize()
           --~ markdownH2Delimiter { base.Title, bg="#03468a"},
           --~ markdownH3 { base.Title, bg="#002a54"},
           --~ markdownH3Delimiter { base.Title, bg="#002a54"},
+
+          -- Following the color scheme in MeanderingProgrammer/markdown.nvim
+          markdownH1 { base.DiffAdd },
+          markdownH2 { base.DiffChange },
+          markdownH3 { base.DiffDelete },
+          markdownH1Delimiter { base.DiffAdd },
+          markdownH2Delimiter { base.DiffChange },
+          markdownH3Delimiter { base.DiffDelete },
       }
   end)
   lush.apply(lush.compile(specs))
