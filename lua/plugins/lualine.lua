@@ -1,7 +1,17 @@
 local vcinfo = function() return "" end
+local vcpath = {
+              'filename',
+              file_status=false,
+              path = 3
+            }
 local ok, local_defs = pcall(require, 'local.config')
-if ok and local_defs.lualine_vcinfo ~= nil then
+if ok then
+  if local_defs.lualine_vcinfo ~= nil then
     vcinfo = local_defs.lualine_vcinfo
+  end
+  if local_defs.lualine_vcpath ~= nil then
+    vcpath = local_defs.lualine_vcpath
+  end
 end
 
 local function pos_info()
@@ -111,13 +121,7 @@ return {
           },
           lualine_c = {},
           lualine_x = {},
-          lualine_y = {
-            {
-              'filename',
-              file_status=false,
-              path = 3
-            }
-          },
+          lualine_y = { vcpath },
           lualine_z = diagnostics_sec,
         }
       }

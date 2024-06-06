@@ -85,7 +85,8 @@ return {
        require('nvim-biscuits').setup({
          default_config = {
            cursor_line_only = true,
-           prefix_string = "  ",
+           --~ prefix_string = "  ",
+           prefix_string = "󱞸 ",
          },
          language_config = {
            vimdoc = { disabled = true },  -- i.e. help
