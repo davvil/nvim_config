@@ -8,7 +8,16 @@ return {
 
       require'nvim-treesitter.configs'.setup {
         -- A list of parser names, or "all"
-        ensure_installed = {"python", "lua", "vim", "bash", "vimdoc", "rust", "markdown"},
+        ensure_installed = {
+          "python",
+          "lua",
+          "vim",
+          "bash",
+          "vimdoc",
+          "rust",
+          "markdown",
+          "markdown_inline",
+        },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
         sync_install = false,
@@ -63,30 +72,15 @@ return {
             },
           },
         },
-
-        rainbow = {
-          enable = true,
-            hlgroups = {
-               'TSRainbowGreen',
-               'TSRainbowYellow',
-               'TSRainbowBlue',
-               'TSRainbowOrange',
-               'TSRainbowViolet',
-               'TSRainbowCyan',
-               'TSRainbowRed',
-            },
-        },
       }
       end
     },
 
    'nvim-treesitter/nvim-treesitter-textobjects',
    'JoosepAlviste/nvim-ts-context-commentstring',  -- Set the correct commentstring also with embedded languages
-   'HiPhish/nvim-ts-rainbow2',
    {
      'code-biscuits/nvim-biscuits',       -- Show context of closing parentheses
-     enabled = false,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
-     build = ':TSUpdate',
+     enabled = true,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
      config = function()
        require('nvim-biscuits').setup({
          default_config = {
@@ -98,5 +92,23 @@ return {
          },
        })
      end,
+   },
+
+   {
+     'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git',
+     config = function()
+       require('rainbow-delimiters.setup').setup({
+           highlight = {
+             'RainbowDelimiterGreen',
+             'RainbowDelimiterYellow',
+             'RainbowDelimiterBlue',
+             'RainbowDelimiterOrange',
+             'RainbowDelimiterViolet',
+             'RainbowDelimiterCyan',
+             'RainbowDelimiterRed',
+           },
+         }
+       )
+     end
    },
  }

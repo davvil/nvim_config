@@ -88,8 +88,11 @@ vim.api.nvim_create_autocmd("FileType",
 
 -- Specific textwidths
 vim.api.nvim_create_autocmd("FileType",
-  { pattern={"text", "telekasten", "markdown"},
+  { pattern={"text", "telekasten"},
 	command="setlocal tw=80" })
+vim.api.nvim_create_autocmd("FileType",
+  { pattern={"markdown"},
+	command="setlocal tw=0" })
 
 -- Asymptote
 vim.api.nvim_create_autocmd({"BufEnter", "BufRead"},

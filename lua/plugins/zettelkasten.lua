@@ -12,6 +12,7 @@ return {
           template_new_note = home .. '/' .. 'templates/new_note.md',
           template_new_weekly = home .. '/' .. 'templates/weekly.md',
           template_new_daily = home .. '/' .. 'templates/daily.md',
+          image_subire = "images",
           sort = "modified",
           media_previewer = "localviu-previewer",
           take_over_my_home = false,
@@ -97,5 +98,5 @@ return {
           let g:mkdp_markdown_css = '/home/vilar/.config/nvim/colors/markdown.css'
         ]])
       end
-  }
+  },
 }

@@ -70,8 +70,8 @@ return {
     config = function()
       require('render-markdown').setup({
         checkbox = { unchecked = '󰄱', checked = '󰄵' },
-        --~ headings = { '◉ ', '◎ ', '○ ', '✺ ', '▶ ', '⤷ ' },
-        headings = { "◈ ", "◇ ", "◆ ", "⋄ ", "❖ ", "⟡ " },
+        headings = { '▶ ', '● ', '○ ', '◉ ', '✺ ', '⤷ ' },
+        bullets = { '◆', '◇', '◈', '⋄' },
       })
     end,
   },
@@ -112,6 +112,7 @@ return {
       \ 'Underfull',
       \ 'Overfull',
       \]
+      let g:vimtex_view_general_viewer = 'zathura'
       ]])
     end
   },
