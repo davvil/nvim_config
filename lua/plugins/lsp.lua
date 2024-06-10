@@ -64,6 +64,11 @@ return {
       })
 
       cmp.setup({
+        window = {
+          completion = cmp.config.window.bordered(),
+          documentation = cmp.config.window.bordered(),
+        },
+
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)
@@ -99,14 +104,14 @@ return {
           format = lspkind.cmp_format({
             mode="symbol",
             menu = ({
-              nvim_lsp = '󰅯 ',
-              buffer = '󰺯 ',
-              nvim_ciderlsp = '󱜚 ',
-              nvim_lsp_signature_help = '󰊕 ',
-              path = '󰙅 ',
-              spell = '󰓆 ',
-              nvim_lua = ' ',
-              luasnip = ' ',
+              nvim_lsp = '(LSP)',
+              buffer = '(Buffer)',
+              nvim_ciderlsp = '(CiderLSP)',
+              nvim_lsp_signature_help = '(Signature)',
+              path = '(Path)',
+              spell = '(Spell)',
+              nvim_lua = '(Lua)',
+              luasnip = '(Luasnip)',
             }),
             symbol_map = {
               Text = '󰙩 ',
@@ -116,13 +121,13 @@ return {
         },
 
         sources = cmp.config.sources({
-          { name = 'luasnip' },
-          { name = 'nvim_ciderlsp' },
-          { name = 'nvim_lsp' },
-          { name = 'omni' },
-          { name = 'nvim_lua' },
-          { name = 'nvim_lsp_signature_help' },
-          { name = 'buffer',
+          { name = 'nvim_ciderlsp', priority=30 },
+          { name = 'nvim_lsp', priority=20 },
+          { name = 'luasnip', priority=10 },
+          { name = 'omni', priority=1 },
+          { name = 'nvim_lua', priority=1 },
+          { name = 'nvim_lsp_signature_help', priority=10 },
+          { name = 'buffer', priority=1,
           keyword_length=5,
           -- Complete from all buffers
           option = {
@@ -171,6 +176,24 @@ return {
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-nvim-lua',
   'f3fora/cmp-spell',
+
+  {
+    'nvimdev/lspsaga.nvim',
+    config = function()
+      require('lspsaga').setup({
+        ui = {
+          border = "rounded",
+        },
+        lightbulb = {
+          enable=false,
+        },
+        symbol_in_winbar = {
+          enable = true,
+          show_file = false,
+        },
+      })
+    end,
+  },
 
   {  -- Show diagnostics only in the corner
     'dgagn/diagflow.nvim',

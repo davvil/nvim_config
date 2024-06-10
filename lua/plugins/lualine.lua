@@ -113,11 +113,9 @@ return {
         tabline = {
           lualine_a = {},
           lualine_b = {
-            {
-              -- Why do we have to define functions here?
-              function() return require("nvim-navic").get_location() end,
-              cond = function() return require("nvim-navic").is_available() end,
-            },
+            -- Ideally here we would take the output of
+            -- https://nvimdev.github.io/lspsaga/breadcrumbs/, but I couldn't
+            -- get it to work :-(
           },
           lualine_c = {},
           lualine_x = {},

@@ -26,12 +26,6 @@ return {
      end
   },
 
-  {'SmiteshP/nvim-navic',             -- LSP context for statusline
-    config=function()
-      require("nvim-navic").setup({ separator = "  "})
-    end
-  },
-
   'stevearc/dressing.nvim',           -- Nicer "dialogs"
 
   'junegunn/vim-easy-align',         -- align with ga
