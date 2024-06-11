@@ -188,7 +188,7 @@ return {
           enable=false,
         },
         symbol_in_winbar = {
-          enable = true,
+          enable = false,
           show_file = false,
         },
       })

@@ -82,6 +82,16 @@ local diagnostics_sec = {
   }
 }
 
+local function lspsaga_breadcrumbs()
+  local from_lsp_saga = require("lspsaga.symbol.winbar").get_bar()
+  if from_lsp_saga == nil then
+    return ""
+  else
+    --~ return from_lsp_saga
+    return string.gsub(string.gsub(from_lsp_saga, "%%#[^#]*#", ""), "%%**", "")
+  end
+end
+
 return {
   { 'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons'},
@@ -113,9 +123,7 @@ return {
         tabline = {
           lualine_a = {},
           lualine_b = {
-            -- Ideally here we would take the output of
-            -- https://nvimdev.github.io/lspsaga/breadcrumbs/, but I couldn't
-            -- get it to work :-(
+            lspsaga_breadcrumbs
           },
           lualine_c = {},
           lualine_x = {},
