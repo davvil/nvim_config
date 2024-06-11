@@ -46,6 +46,7 @@ M.nmap("<C-p>", "<C-i>")
 
 -- LSP related
 M.nmap("K", "<cmd>Lspsaga hover_doc<cr>")
+M.nmap("gK", "<cmd>Lspsaga hover_doc ++keep<cr>")
 M.nmap("<leader>rn", "<cmd>Lspsaga rename ++project<cr>")
 M.nmap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
 M.nmap("gp", "<cmd>Lspsaga peek_definition<cr>")
