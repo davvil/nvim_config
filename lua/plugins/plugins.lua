@@ -66,6 +66,9 @@ return {
         checkbox = { unchecked = '󰄱', checked = '󰄵' },
         headings = { '▶ ', '● ', '○ ', '◉ ', '✺ ', '⤷ ' },
         bullets = { '◆', '◇', '◈', '⋄' },
+        highlights = {
+          code = 'PMenuExtra',
+        },
       })
     end,
   },

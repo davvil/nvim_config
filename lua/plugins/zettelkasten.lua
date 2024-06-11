@@ -82,21 +82,4 @@ return {
       ]])
     end
   },
-
-  {
-      "iamcco/markdown-preview.nvim",
-      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-      ft = { "markdown" },
-      build = function() vim.fn["mkdp#util#install"]() end,
-      config=function()
-        vim.cmd([[
-          let g:mkdp_combine_preview = 1
-          let g:mkdp_combine_preview_auto_refresh = 1
-          let g:mkdp_auto_close = 0
-          let g:mkdp_theme = 'dark'
-          let g:mkdp_browser = '/home/vilar/bin/google-chrome-i3-named-app'
-          let g:mkdp_markdown_css = '/home/vilar/.config/nvim/colors/markdown.css'
-        ]])
-      end
-  },
 }
