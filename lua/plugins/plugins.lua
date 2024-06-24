@@ -115,5 +115,21 @@ return {
         require('yankbank').setup()
 	vim.keymap.set("n", "<leader>y", "<cmd>YankBank<CR>", { noremap = true })
     end,
-}
-}
+  },
+
+  {  -- Shade inactive windows
+    'sunjon/shade.nvim',
+    config = function()
+      require'shade'.setup({
+        overlay_opacity = 55,
+        opacity_step = 1,
+        keys = {
+          brightness_up    = '<S-C-Up>',
+          brightness_down  = '<S-C-Down>',
+          toggle           = '<S-C-s>',
+        }
+      })
+    end
+    }
+
+  }
