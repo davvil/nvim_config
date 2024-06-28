@@ -117,19 +117,14 @@ return {
     end,
   },
 
-  {  -- Shade inactive windows
-    'sunjon/shade.nvim',
+  { -- Shade inactive windows
+    'miversen33/sunglasses.nvim',
     config = function()
-      require'shade'.setup({
-        overlay_opacity = 55,
-        opacity_step = 1,
-        keys = {
-          brightness_up    = '<S-C-Up>',
-          brightness_down  = '<S-C-Down>',
-          toggle           = '<S-C-s>',
-        }
-      })
-    end
-    }
+        require('sunglasses').setup({
+          filter_type = "SHADE",
+          filter_percent = .3,
+        })
+    end,
+  },
 
-  }
+}
