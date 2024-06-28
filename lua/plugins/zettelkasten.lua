@@ -1,6 +1,8 @@
 return {
   {
-   'renerocksai/telekasten.nvim',
+   --~ 'renerocksai/telekasten.nvim',
+   'davvil/telekasten.nvim',
+   branch = "workdays",
    dependencies = { "renerocksai/calendar-vim" },
    config=function()
       local home = vim.fn.expand("~/zettelkasten")
