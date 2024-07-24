@@ -79,7 +79,7 @@ function M.tkInsertLinkWithTitle(opts)
             local basename = selection.filename:match("(.+)%..+")
             local display_text = vim.fn.input("Display text? ")
             vim.api.nvim_put(
-                { " [[" .. basename .. "|" .. display_text .. "]]" },
+                { "[[" .. basename .. "|" .. display_text .. "]]" },
                 "",
                 false,
                 true
@@ -96,6 +96,8 @@ function M.tkInsertLinkWithTitle(opts)
             attach_mappings = attach_mappings,
             find_command = find_command,
             sort = sort,
+            disable_coordinates = true,
+            default_text = "title:.*",
         })
     else
         tk.find_files_sorted({

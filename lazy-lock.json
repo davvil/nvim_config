@@ -13,6 +13,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "diagflow.nvim": { "branch": "main", "commit": "4a03e94e1bf6d18feaac44476cfcb78b403bd609" },
   "dressing.nvim": { "branch": "master", "commit": "6741f1062d3dc6e4755367a7e9b347b553623f04" },
+  "guess-indent.nvim": { "branch": "main", "commit": "6c75506e71836f34fe5c5efa322dfce3e0494e7b" },
   "habamax.nvim": { "branch": "master", "commit": "4a4105aea429fca3cb5ebcca584e21b9af2ae265" },
   "highlight-undo.nvim": { "branch": "main", "commit": "1ea1c79372d7d93c88fd97543880927b7635e3d2" },
   "ice-cave.nvim": { "branch": "main", "commit": "97ec7603babc423a54692f7ae7343c0d03c3ab38" },
