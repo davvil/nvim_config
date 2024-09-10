@@ -79,7 +79,7 @@ function M.tkInsertLinkWithTitle(opts)
             local basename = selection.filename:match("(.+)%..+")
             local display_text = vim.fn.input("Display text? ")
             vim.api.nvim_put(
-                { "[[" .. basename .. "|" .. display_text .. "]]" },
+                { " [[" .. basename .. "|" .. display_text .. "]]" },
                 "",
                 false,
                 true

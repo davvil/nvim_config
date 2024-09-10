@@ -8,7 +8,7 @@ return {
         updateevents = "TextChanged,TextChangedI",
       })
 
-      require'luasnip'.config.setup({})
+      require'luasnip'.config.setup({ enable_autosnippets = true })
 
       vim.keymap.set({'i', 's'}, '<A-Tab>', function()
         if ls.expand_or_jumpable() then
@@ -29,6 +29,8 @@ return {
       require('vilar.snippets.python')
       require('vilar.snippets.sh')
       require('vilar.snippets.telekasten')
+      require('vilar.snippets.tex')
+      require('vilar.snippets.markdown')
       pcall(require, 'local.snippets')
     end
   }
