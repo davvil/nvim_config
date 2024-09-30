@@ -78,6 +78,14 @@ return {
         },
         heading = {
           icons = { '▶ ', '● ', '○ ', '◉ ', '✺ ', '⤷ ' },
+          backgrounds = {
+            'RenderMarkdownH1Bg',
+            'RenderMarkdownH2Bg',
+            'RenderMarkdownH2Bg',
+            'RenderMarkdownH4Bg',
+            'RenderMarkdownH5Bg',
+            'RenderMarkdownH6Bg',
+          }
         },
         bullet = {
           icons = { '◆', '◇', '◈', '⋄' },
