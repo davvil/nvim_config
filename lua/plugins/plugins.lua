@@ -118,4 +118,9 @@ return {
         })
     end,
   },
+
+  { -- Mark words without searching for them
+    'inkarkat/vim-mark',
+    dependencies='inkarkat/vim-ingo-library',
+  },
 }

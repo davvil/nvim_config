@@ -83,6 +83,7 @@ return {
      enabled = true,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
      config = function()
        require('nvim-biscuits').setup({
+         max_file_size = '50kb',
          default_config = {
            cursor_line_only = true,
            prefix_string = "󱞸 ",
