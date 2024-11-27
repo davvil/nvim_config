@@ -54,12 +54,12 @@ return {
       local CR_mapping = cmp.mapping({
         i = function(fallback)
           if cmp.visible() and cmp.get_active_entry() then
-            cmp.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = false })
+            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
           else
             fallback()
           end
         end,
-        s = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Insert, select = false }),
+        s = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
         c = function(fallback) fallback() end,
       })
 
