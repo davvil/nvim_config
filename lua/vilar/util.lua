@@ -96,6 +96,8 @@ function M.tkInsertLinkWithTitle(opts)
             attach_mappings = attach_mappings,
             find_command = find_command,
             sort = sort,
+            disable_coordinates = true,
+            default_text = "title:.*",
         })
     else
         tk.find_files_sorted({

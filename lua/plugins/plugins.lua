@@ -58,17 +58,47 @@ return {
   'godlygeek/tabular',
 
   {
-    'MeanderingProgrammer/markdown.nvim',
-    name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+    'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require('render-markdown').setup({
-        checkbox = { unchecked = '󰄱', checked = '󰄵' },
-        headings = { '▶ ', '● ', '○ ', '◉ ', '✺ ', '⤷ ' },
-        bullets = { '◆', '◇', '◈', '⋄' },
-        highlights = {
-          code = 'PMenuExtra',
+        anti_conceal = { enabled = false },
+        win_options = {
+          concealcursor = {
+            rendered = 'nv',
+          },
         },
+        checkbox = {
+          unchecked = {
+            icon = '󰄱',
+          },
+          checked = {
+            icon = '󰄵',
+          },
+        },
+        heading = {
+          icons = { '▶ ', '● ', '○ ', '◉ ', '✺ ', '⤷ ' },
+          backgrounds = {
+            'RenderMarkdownH1Bg',
+            'RenderMarkdownH2Bg',
+            'RenderMarkdownH2Bg',
+            'RenderMarkdownH4Bg',
+            'RenderMarkdownH5Bg',
+            'RenderMarkdownH6Bg',
+          }
+        },
+        bullet = {
+          icons = { '◆', '◇', '◈', '⋄' },
+        },
+        code = {
+          highlight = 'PMenuExtra',
+          highlight_inline = 'PMenuExtra',
+          position = 'right',
+          width = 'block',
+          left_pad = 2,
+          right_pad = 2,
+        },
+        sign = { enabled = false, },
       })
     end,
   },
@@ -104,7 +134,9 @@ return {
       \ 'Underfull',
       \ 'Overfull',
       \]
-      let g:vimtex_view_general_viewer = 'zathura'
+      "~ let g:vimtex_view_general_viewer = 'zathura'
+      let g:vimtex_view_general_viewer = 'sioyek'
+      let g:vimtex_view_automatic = 0
       ]])
     end
   },
@@ -123,4 +155,12 @@ return {
     'inkarkat/vim-mark',
     dependencies='inkarkat/vim-ingo-library',
   },
+
+  {
+    'NMAC427/guess-indent.nvim',
+    config = function()
+      require('guess-indent').setup {}
+    end
+  },
 }
+
