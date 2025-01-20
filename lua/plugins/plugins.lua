@@ -155,12 +155,5 @@ return {
     'inkarkat/vim-mark',
     dependencies='inkarkat/vim-ingo-library',
   },
-
-  {
-    'NMAC427/guess-indent.nvim',
-    config = function()
-      require('guess-indent').setup {}
-    end
-  },
 }
 
