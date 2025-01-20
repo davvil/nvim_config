@@ -155,5 +155,13 @@ return {
     'inkarkat/vim-mark',
     dependencies='inkarkat/vim-ingo-library',
   },
+
+  {
+    "karb94/neoscroll.nvim",
+    opts = {
+      duration_multiplier = 0.2,
+      hide_cursor = true,
+    },
+  },
 }
 
