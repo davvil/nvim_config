@@ -54,6 +54,7 @@ return {
     dependencies={ "rktjmp/lush.nvim" },
     config = function()
       vim.cmd([[autocmd ColorScheme forestbones lua require "vilar.customize_zenbones".customize()]])
+      vim.cmd([[autocmd ColorScheme zenwritten lua require "vilar.customize_zenbones".customize_onlySpellBad()]])
     end
   },
 

@@ -59,4 +59,13 @@ M.nmap("[D", "<cmd>lua require('lspsaga.diagnostic'):goto_prev({ severity = vim.
 M.nmap("]D", "<cmd>lua require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })<cr>")
 M.nmap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics ++unfocus<cr>")
 
+local neoscroll_keymap = {
+  ["<PageUp>"] = function() require('neoscroll').ctrl_b({ duration = 450 }) end;
+  ["<PageDown>"] = function() require('neoscroll').ctrl_f({ duration = 450 }) end;
+}
+local neoscroll_modes = { 'n', 'v', 'x' }
+for key, func in pairs(neoscroll_keymap) do
+  vim.keymap.set(neoscroll_modes, key, func)
+end
+
 return M
