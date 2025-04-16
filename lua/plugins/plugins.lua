@@ -156,6 +156,7 @@ return {
   --~   dependencies='inkarkat/vim-ingo-library',
   --~ },
 
+  -- "Smooth scrolling"
   {
     "karb94/neoscroll.nvim",
     opts = {
@@ -170,6 +171,17 @@ return {
       require("zk").setup({
         -- See Setup section below
       })
+    end
+  },
+
+
+  -- Open document links with gx
+  {
+    "icholy/lsplinks.nvim",
+    config = function()
+        local lsplinks = require("lsplinks")
+        lsplinks.setup()
+        vim.keymap.set("n", "gx", lsplinks.gx)
     end
   },
 
