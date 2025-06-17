@@ -123,5 +123,6 @@ pcall(require, 'local.config')
 -- Disable the inline diagnostics, as this is handled by the plugins
 vim.diagnostic.config({
   virtual_text = false,
+  virtual_lines = false,
 })
 

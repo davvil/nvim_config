@@ -62,7 +62,27 @@ return {
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
       require('render-markdown').setup({
-        anti_conceal = { enabled = false },
+        render_modes = true,
+        --~ anti_conceal = { enabled = false },
+        anti_conceal = {
+          ignore = {
+            head_icon = {'n', 'v', 'c'},
+            head_background = {'n', 'v', 'c'},
+            head_border = {'n', 'v', 'c'},
+            code_language = {'n', 'v', 'c'},
+            code_background = {'n', 'v', 'c'},
+            code_border = {'n', 'v', 'c'},
+            dash = {'n', 'v', 'c'},
+            bullet = {'n', 'v', 'c'},
+            check_icon = {'n', 'v', 'c'},
+            check_scope = {'n', 'v', 'c'},
+            quote = {'n', 'v', 'c'},
+            table_border = {'n', 'v', 'c'},
+            callout = {'n', 'v', 'c'},
+            link = {'n', 'v', 'c'},
+            sign = {'n', 'v', 'c'},
+          },
+        },
         win_options = {
           concealcursor = {
             rendered = 'nv',
@@ -99,6 +119,11 @@ return {
           right_pad = 2,
         },
         sign = { enabled = false, },
+        link = {
+          custom = {
+            who = { pattern = "^http://who/", icon=" " },
+          },
+        },
       })
     end,
   },
@@ -169,7 +194,7 @@ return {
     "zk-org/zk-nvim",
     config = function()
       require("zk").setup({
-        -- See Setup section below
+        picker = "telescope"
       })
     end
   },
