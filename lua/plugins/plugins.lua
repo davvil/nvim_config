@@ -177,7 +177,7 @@ return {
   },
 
   { -- Mark words without searching for them
-    'inkarkat/vim-mark',
+    'davvil/vim-mark',
     dependencies='inkarkat/vim-ingo-library',
   },
 
