@@ -86,6 +86,10 @@ vim.api.nvim_create_autocmd("FileType",
 vim.api.nvim_create_autocmd("FileType",
   { pattern="markdown", command="set comments=b:>" })
 
+-- Remove wrapping for markdown files
+vim.api.nvim_create_autocmd("FileType",
+  { pattern="markdown", command="set nowrap" })
+
 -- Specific textwidths
 vim.api.nvim_create_autocmd("FileType",
   { pattern={"text", "telekasten"},
