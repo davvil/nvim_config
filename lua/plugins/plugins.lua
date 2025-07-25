@@ -41,8 +41,10 @@ return {
   {'axieax/typo.nvim',               -- Handle frequent file typos in the command line
     config = function() require("typo").setup() end },
 
-  { 'davvil/vim-commentary',         -- Changed comments to add ~
-    branch='tilde-comment' },
+  -- { 'davvil/vim-commentary',         -- Changed comments to add ~
+  --   branch='tilde-comment' },
+  -- 'tpope/vim-commentary',
+  -- 'numToStr/Comment.nvim',
 
   'junegunn/limelight.vim',          -- Highlight "current" region
 
@@ -207,6 +209,14 @@ return {
         local lsplinks = require("lsplinks")
         lsplinks.setup()
         vim.keymap.set("n", "gx", lsplinks.gx)
+    end
+  },
+
+  {
+    dir = '~/code-comments',
+    config = function()
+      require("code-comments").setup({
+      })
     end
   },
 

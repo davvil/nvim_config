@@ -12,6 +12,7 @@ function _M.customize()
           VirtColumn { base.VirtColumn, fg="#444444" },
           Comment { base.Comment, fg="#c3d9e7" },
           sym("@comment.code") { base.Comment, fg="#536977" },
+          CommentedCode { base.Comment, fg="#536977" },
 
           -- Following the color scheme in MeanderingProgrammer/markdown.nvim
           markdownH1 { base.DiffAdd },
