@@ -161,8 +161,7 @@ return {
       \ 'Underfull',
       \ 'Overfull',
       \]
-      let g:vimtex_view_general_viewer = 'zathura'
-      "~ let g:vimtex_view_general_viewer = 'sioyek'
+      let g:vimtex_view_method = 'zathura_simple'
       let g:vimtex_view_automatic = 0
       ]])
     end
@@ -209,14 +208,6 @@ return {
         local lsplinks = require("lsplinks")
         lsplinks.setup()
         vim.keymap.set("n", "gx", lsplinks.gx)
-    end
-  },
-
-  {
-    dir = '~/code-comments',
-    config = function()
-      require("code-comments").setup({
-      })
     end
   },
 

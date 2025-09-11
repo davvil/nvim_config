@@ -98,6 +98,7 @@ return {
 
    {
      'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git',
+     commit = '884350c',
      config = function()
        require('rainbow-delimiters.setup').setup({
            highlight = {
