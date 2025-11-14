@@ -211,14 +211,5 @@ return {
         vim.keymap.set("n", "gx", lsplinks.gx)
     end
   },
-
-  {
-    dir = '~/code-comments',
-    config = function()
-      require("code-comments").setup({
-      })
-    end
-  },
-
 }
 
