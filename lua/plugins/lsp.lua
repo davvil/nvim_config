@@ -6,10 +6,10 @@ return {
     'neovim/nvim-lspconfig',
     config = function()
       -- Rust
-      require('lspconfig').rust_analyzer.setup({})
+      vim.lsp.config.rust_analyzer = {}
 
       -- Lua
-      require('lspconfig').lua_ls.setup({
+      vim.lsp.config.lua_ls = {
         settings = {
           Lua = {
             runtime = {
@@ -31,10 +31,8 @@ return {
             },
           },
         },
-      })
+      }
 
-      -- LaTeX
-      --~ require('lspconfig').texlab.setup({})
     end
   },
   'onsails/lspkind.nvim',
