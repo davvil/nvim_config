@@ -32,7 +32,6 @@ return {
           },
         },
       }
-
     end
   },
   'onsails/lspkind.nvim',
@@ -100,7 +99,7 @@ return {
 
         formatting = {
           format = lspkind.cmp_format({
-            mode="symbol",
+            mode="symbol_text",
             menu = ({
               nvim_lsp = '(LSP)',
               buffer = '(Buffer)',
@@ -113,8 +112,9 @@ return {
             }),
             symbol_map = {
               Text = '󰙩 ',
-              Variable = '󱃼 ',
+             Variable = '󱃼 ',
             },
+            show_labelDetails=true,
           }),
         },
 
