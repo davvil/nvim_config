@@ -78,23 +78,25 @@ return {
 
    'nvim-treesitter/nvim-treesitter-textobjects',
    'JoosepAlviste/nvim-ts-context-commentstring',  -- Set the correct commentstring also with embedded languages
-   {
-     'code-biscuits/nvim-biscuits',       -- Show context of closing parentheses
-     enabled = true,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
-     config = function()
-       require('nvim-biscuits').setup({
-         max_file_size = '50kb',
-         default_config = {
-           cursor_line_only = true,
-           prefix_string = "󱞸 ",
-         },
-         language_config = {
-           vimdoc = { disabled = true },  -- i.e. help
-           markdown = { disabled = true },
-         },
-       })
-     end,
-   },
+
+   -- Nice plugin, but slows down operation
+   -- {
+   --   'code-biscuits/nvim-biscuits',       -- Show context of closing parentheses
+   --   enabled = true,                      -- See https://github.com/code-biscuits/nvim-biscuits/issues/45
+   --   config = function()
+   --     require('nvim-biscuits').setup({
+   --       max_file_size = '20kb',
+   --       default_config = {
+   --         cursor_line_only = true,
+   --         prefix_string = "󱞸 ",
+   --       },
+   --       language_config = {
+   --         vimdoc = { disabled = true },  -- i.e. help
+   --         markdown = { disabled = true },
+   --       },
+   --     })
+   --   end,
+   -- },
 
    {
      'https://gitlab.com/HiPhish/rainbow-delimiters.nvim.git',
