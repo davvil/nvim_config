@@ -71,6 +71,8 @@ require('vilar.marks_stc')
 vim.opt.relativenumber = true  -- Needed for statuscolumn to work properly
 vim.opt.statuscolumn = '%s%3{MarkInLine(v:lnum, v:relnum)} '
 
+require('vilar.lsp')
+
 -- Autochdir does not seem to work, probably because of some plugin
 vim.api.nvim_create_autocmd("BufEnter", { pattern="*", command="silent! lcd %:p:h" } )
 
