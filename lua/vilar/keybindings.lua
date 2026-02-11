@@ -44,21 +44,6 @@ M.nmap("<Leader>p", ":lua vim.diagnostic.goto_prev()<CR>")
 M.nmap("<Leader>d", ":lua vim.diagnostic.open_float()<CR>")
 M.nmap("<C-p>", "<C-i>")
 
--- LSP related
-M.nmap("K", "<cmd>Lspsaga hover_doc<cr>")
-M.nmap("gK", "<cmd>Lspsaga hover_doc ++keep<cr>")
-M.nmap("<leader>rn", "<cmd>Lspsaga rename ++project<cr>")
-M.nmap("<leader>ca", "<cmd>Lspsaga code_action<cr>")
-M.nmap("gp", "<cmd>Lspsaga peek_definition<cr>")
-M.nmap("gd", "<cmd>Lspsaga goto_definition<cr>")
-vim.keymap.set('n', 'gr', "<cmd>Lspsaga finder<cr>")
-M.nmap("<leader>o", "<cmd>Lspsaga outline<cr>")
-M.nmap("[d", "<cmd>Lspsaga diagnostic_jump_prev<cr>")
-M.nmap("]d", "<cmd>Lspsaga diagnostic_jump_next<cr>")
-M.nmap("[D", "<cmd>lua require('lspsaga.diagnostic'):goto_prev({ severity = vim.diagnostic.severity.ERROR })<cr>")
-M.nmap("]D", "<cmd>lua require('lspsaga.diagnostic'):goto_next({ severity = vim.diagnostic.severity.ERROR })<cr>")
-M.nmap("<leader>sl", "<cmd>Lspsaga show_line_diagnostics ++unfocus<cr>")
-
 local neoscroll_keymap = {
   ["<PageUp>"] = function() require('neoscroll').ctrl_b({ duration = 450 }) end;
   ["<PageDown>"] = function() require('neoscroll').ctrl_f({ duration = 450 }) end;
