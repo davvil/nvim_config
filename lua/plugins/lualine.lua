@@ -107,7 +107,16 @@ return {
 
         tabline = {
           lualine_a = {},
-          lualine_b = {},
+          lualine_b = {
+            {
+              function()
+                  return require("nvim-navic").get_location()
+              end,
+              cond = function()
+                  return require("nvim-navic").is_available()
+              end
+            },
+          },
           lualine_c = {},
           lualine_x = {},
           lualine_y = { vcpath },
