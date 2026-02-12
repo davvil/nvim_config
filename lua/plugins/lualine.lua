@@ -1,18 +1,13 @@
+--------------------------------------------------------------------------------
+-- This functions are used for specifying the version control information
+-- Adapt for your specific use case
 local vcinfo = function() return "" end
 local vcpath = {
               'filename',
               file_status=false,
               path = 3
             }
-local ok, local_defs = pcall(require, 'local.config')
-if ok then
-  if local_defs.lualine_vcinfo ~= nil then
-    vcinfo = local_defs.lualine_vcinfo
-  end
-  if local_defs.lualine_vcpath ~= nil then
-    vcpath = local_defs.lualine_vcpath
-  end
-end
+--------------------------------------------------------------------------------
 
 local function pos_info()
   local line = vim.fn.line('.')
@@ -82,16 +77,6 @@ local diagnostics_sec = {
   }
 }
 
-local function lspsaga_breadcrumbs()
-  local from_lsp_saga = require("lspsaga.symbol.winbar").get_bar()
-  if from_lsp_saga == nil then
-    return ""
-  else
-    --~ return from_lsp_saga
-    return string.gsub(string.gsub(from_lsp_saga, "%%#[^#]*#", ""), "%%**", "")
-  end
-end
-
 return {
   { 'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons'},
@@ -122,9 +107,7 @@ return {
 
         tabline = {
           lualine_a = {},
-          lualine_b = {
-            lspsaga_breadcrumbs
-          },
+          lualine_b = {},
           lualine_c = {},
           lualine_x = {},
           lualine_y = { vcpath },
