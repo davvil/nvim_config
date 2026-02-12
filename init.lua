@@ -18,24 +18,6 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local local_lua_path = vim.fn.stdpath("config") .. "/lua/local"
-if not vim.loop.fs_stat(local_lua_path .. "/plugins.lua") then
-  vim.fn.system({"mkdir", "-p", local_lua_path})
-  local fp = io.open(local_lua_path .. "/plugins.lua", "w")
-  fp:write("return {}")
-  fp:close()
-end
-if not vim.loop.fs_stat(local_lua_path .. "/config.lua") then
-  vim.fn.system({"mkdir", "-p", local_lua_path})
-  local fp = io.open(local_lua_path .. "/config.lua", "w")
-  fp:write([[
-local M = {}
-
-return M
-]])
-  fp:close()
-end
-
 require('lazy').setup({
   spec="plugins",
   change_detection = {
@@ -118,9 +100,6 @@ require('vilar.keybindings')
 
 -- Command and function definitions
 require('vilar.commands')
-
--- Load local config (if it exists)
-pcall(require, 'local.config')
 
 -- Disable the inline diagnostics, as this is handled by the plugins
 vim.diagnostic.config({
