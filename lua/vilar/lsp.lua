@@ -1,3 +1,5 @@
+vim.lsp.enable("lua_ls")
+
 vim.lsp.inline_completion.enable()
 
 -- Tab: Select next item if menu is open, otherwise Insert Tab
