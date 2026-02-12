@@ -17,10 +17,6 @@ return {
         sh = {'shellcheck'},
         lua = {'luacheck'},
       }
-      local ok, local_defs = pcall(require, 'local.config')
-      if ok and local_defs.lint_config ~= nil then
-        local_defs.lint_config(lint)
-      end
 
       vim.cmd([[
       function! SetLint()
