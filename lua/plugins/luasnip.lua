@@ -31,7 +31,6 @@ return {
       require('vilar.snippets.telekasten')
       require('vilar.snippets.tex')
       require('vilar.snippets.markdown')
-      pcall(require, 'local.snippets')
     end
   }
 }
