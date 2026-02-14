@@ -58,4 +58,5 @@ return {
     end,
   },
 
+  'https://github.com/neovim/nvim-lspconfig',
 }
